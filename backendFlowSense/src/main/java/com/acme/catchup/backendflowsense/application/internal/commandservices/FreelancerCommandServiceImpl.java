@@ -1,0 +1,20 @@
+package com.acme.catchup.backendflowsense.application.internal.commandservices;
+
+import com.acme.catchup.backendflowsense.domain.model.aggregates.Freelancer;
+import com.acme.catchup.backendflowsense.domain.repositories.FreelancerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class FreelancerCommandServiceImpl {
+    @Autowired
+    private FreelancerRepository repository;
+
+    public Freelancer save(Freelancer freelancer) {
+        return repository.save(freelancer);
+    }
+
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
+} 
